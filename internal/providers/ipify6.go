@@ -7,10 +7,10 @@ import (
 	"github.com/Mario-F/cloudflare-dyndns/internal/network"
 )
 
-func piliappGetIP() (string, error) {
-	logger.Debugf("Start GetIP with piliapp")
+func ipify6GetIP() (string, error) {
+	logger.Debugf("Start GetIP with ipify6")
 
-	resp, err := httpClient.Get("https://de.piliapp.com/what-is-my/ipv6/")
+	resp, err := httpClient.Get("https://api6.ipify.org")
 	if err != nil {
 		return "", err
 	}
@@ -30,16 +30,16 @@ func piliappGetIP() (string, error) {
 	if ip == "" {
 		return "", errIPNotFound
 	}
-	logger.Debugf("Found IP with piliapp: %+v\n", ip)
+	logger.Debugf("Found IP with ipify6: %+v\n", ip)
 	return ip, nil
 }
 
-var piliappProvider Provider = Provider{
-	GetIP:        piliappGetIP,
+var ipify6Provider Provider = Provider{
+	GetIP:        ipify6GetIP,
 	Version:      network.IPv6,
-	ProviderName: "piliapp",
+	ProviderName: "ipify6",
 }
 
 func init() {
-	ProviderList = append(ProviderList, piliappProvider)
+	ProviderList = append(ProviderList, ipify6Provider)
 }

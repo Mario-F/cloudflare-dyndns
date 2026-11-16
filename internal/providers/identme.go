@@ -7,10 +7,10 @@ import (
 	"github.com/Mario-F/cloudflare-dyndns/internal/network"
 )
 
-func whoismyispGetIP() (string, error) {
-	logger.Debugf("Start GetIP with whoismyisp")
+func identme4GetIP() (string, error) {
+	logger.Debugf("Start GetIP with identme4")
 
-	resp, err := httpClient.Get("https://www.whoismyisp.org/")
+	resp, err := httpClient.Get("https://v4.ident.me")
 	if err != nil {
 		return "", err
 	}
@@ -30,16 +30,16 @@ func whoismyispGetIP() (string, error) {
 	if ip == "" {
 		return "", errIPNotFound
 	}
-	logger.Debugf("Found IP with whoismyisp: %+v\n", ip)
+	logger.Debugf("Found IP with identme4: %+v\n", ip)
 	return ip, nil
 }
 
-var whoismyispProvider Provider = Provider{
-	GetIP:        whoismyispGetIP,
+var identme4Provider Provider = Provider{
+	GetIP:        identme4GetIP,
 	Version:      network.IPv4,
-	ProviderName: "whoismyisp",
+	ProviderName: "identme4",
 }
 
 func init() {
-	ProviderList = append(ProviderList, whoismyispProvider)
+	ProviderList = append(ProviderList, identme4Provider)
 }
