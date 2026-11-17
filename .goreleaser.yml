@@ -9,6 +9,7 @@ builds:
     ldflags:
       - -s -w -X github.com/Mario-F/cloudflare-dyndns/cmd.Version=v{{.Version}}
     goos:
+      - freebsd
       - linux
       - windows
       - darwin

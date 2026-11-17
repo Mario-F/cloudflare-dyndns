@@ -55,4 +55,4 @@ docker run --rm -v "$PWD":/w -w /w goreleaser/goreleaser:latest check           
 
 - Commit messages follow Conventional Commits (`feat:`, `fix:`, `docs:`, …).
 - Commit, push, tags and history rewrites only with explicit approval of the maintainer.
-- Releases: tag `v*` → goreleaser (linux/windows/darwin; 386/amd64/arm/arm64, goarm 6/7); the same tag push → multi-arch image (`latest` + semver tags) `ghcr.io/mario-f/cloudflare-dyndns`.
+- Releases: tag `v*` → goreleaser (freebsd/linux/windows/darwin; 386/amd64/arm/arm64, goarm 6/7); the same tag push → multi-arch image (`latest` + semver tags) `ghcr.io/mario-f/cloudflare-dyndns`.

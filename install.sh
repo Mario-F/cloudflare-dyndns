@@ -67,6 +67,11 @@ get_binaries() {
     darwin/arm64) BINARIES="cloudflare-dyndns" ;;
     darwin/armv6) BINARIES="cloudflare-dyndns" ;;
     darwin/armv7) BINARIES="cloudflare-dyndns" ;;
+    freebsd/386) BINARIES="cloudflare-dyndns" ;;
+    freebsd/amd64) BINARIES="cloudflare-dyndns" ;;
+    freebsd/arm64) BINARIES="cloudflare-dyndns" ;;
+    freebsd/armv6) BINARIES="cloudflare-dyndns" ;;
+    freebsd/armv7) BINARIES="cloudflare-dyndns" ;;
     linux/386) BINARIES="cloudflare-dyndns" ;;
     linux/amd64) BINARIES="cloudflare-dyndns" ;;
     linux/arm64) BINARIES="cloudflare-dyndns" ;;
